@@ -29,15 +29,6 @@ This sample project has more than just counting vehicles, here are the additiona
 - **The images of detected vehicles are cropped from video frame and they are saved as new images under "[detected_vehicles](https://github.com/ahmetozlu/vehicle_counting_tensorflow/tree/master/detected_vehicles)" folder path**
 - **The program gives a .csv file as an output ([traffic_measurement.csv](https://github.com/ahmetozlu/vehicle_counting_tensorflow/blob/master/traffic_measurement.csv)) which includes "Vehicle Type/Size", " Vehicle Color", " Vehicle Movement Direction", " Vehicle Speed (km/h)" rows, after the end of the process for the source video file.**
 
-ToDos:
-
-- More powerful detection models will be shared.
-- Sample codes will be developed to process different types of input videos (for different types of road traffics such as two way lane road).
-- Code cleanup will be performed.
-- UI will be developed. 
-
-The input video can be accessible by this [link](https://github.com/ahmetozlu/vehicle_counting_tensorflow/blob/master/input_video.mp4).
-
 ## Theory
 
 ### System Architecture
@@ -70,12 +61,6 @@ Source video is read frame by frame with OpenCV. Each frames is processed by ["S
 
 By default I use an ["SSD with Mobilenet" model](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17) in this project. You can find more information about SSD in [here](https://towardsdatascience.com/understanding-ssd-multibox-real-time-object-detection-in-deep-learning-495ef744fab). See the [detection model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md) for a list of other models that can be run out-of-the-box with varying speeds and accuracies.
 
-*The minimum vehicle detection threshold can be set [in this line](https://github.com/ahmetozlu/tensorflow_object_counting_api/blob/master/utils/visualization_utils.py#L443) in terms of percentage. The default minimum vehicle detecion threshold is 0.5!*
-
-## Project Demo
-
-Demo video of the project is available on [My YouTube Channel](https://www.youtube.com/watch?v=PrqnhHf6fhM).
-
 ## Installation
 
 **Docker setup with Nvidia GPU:** Run the demo in the GPU without installing anything, just nvidia-docker. The command to set up this docker:
@@ -105,8 +90,6 @@ Install TensorFlow by invoking one of the following commands:
     $ pip3 install tensorflow     # Python 3.n; CPU support (no GPU support)
     $ pip3 install tensorflow-gpu # Python 3.n; GPU support
 
-Current program is compatible with TensorFlow 1.5.0 version. Please uncomment these lines to run the program with TensorFlow 2.x: [#1](https://github.com/ahmetozlu/vehicle_counting_tensorflow/blob/master/utils/label_map_util.py#L117), [#2](https://github.com/ahmetozlu/vehicle_counting_tensorflow/blob/master/vehicle_detection_main.py#L77), [#3](https://github.com/ahmetozlu/vehicle_counting_tensorflow/blob/master/vehicle_detection_main.py#L77), [#4](https://github.com/ahmetozlu/vehicle_counting_tensorflow/blob/master/vehicle_detection_main.py#L78).
-
 **4.) TensorFlow Object Detection API**
 
 See required commands to install TensorFlow Object Detection API on Ubuntu in [here](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md).
@@ -127,18 +110,3 @@ After completing these 4 installation steps that are given at above, you can tes
 
 ---
 
-## Citation
-If you use this code for your publications, please cite it as:
-
-    @ONLINE{vdtct,
-        author = "Ahmet Özlü",
-        title  = "Vehicle Detection, Tracking and Counting by TensorFlow",
-        year   = "2018",
-        url    = "https://github.com/ahmetozlu/vehicle_counting_tensorflow"
-    }
-
-## Author
-Ahmet Özlü
-
-## License
-This system is available under the MIT license. See the LICENSE file for more info.
